@@ -1,6 +1,9 @@
 /*
 Title          : Summation with Pthread
 Command to run : g++ pthread_part1a.cpp -o part1a.out -lpthread 
+
+A Pthread program illustrating how to create a simple thread and some of the Pthread API.
+This program implements the summation function where the summation operation is run as a separate thread.
 */
 
 #include <pthread.h>
