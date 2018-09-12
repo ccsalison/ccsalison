@@ -1,3 +1,9 @@
+/*
+Title          : Summation with Win32 thread
+
+A Win32 thread program illustrating how to sum the fibonacci series in parallel.
+*/
+
 #include <Windows.h>
 #include <stdio.h>
 
