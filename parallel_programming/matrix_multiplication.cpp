@@ -1,3 +1,9 @@
+/*
+Title          : Matrix multiplication with Pthread
+Command to run : g++ <file name> -o <output object name> -lpthread 
+A Pthread program illustrating how to mutiply matrix and some of the Pthread API.
+*/
+
 #include <pthread.h>
 #include <cstdlib>
 #include <stdio.h>
@@ -75,7 +81,7 @@ void *runner(void *param)
 	int sum = 0;
 
 	for(int k = 0; k < K; k++){
-      sum += A[my_data->i][k] * B[k][my_data->j];
+      		sum += A[my_data->i][k] * B[k][my_data->j];
    	}
 
    	C[my_data->i][my_data->j] = sum;
