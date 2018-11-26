@@ -5,6 +5,8 @@
 // mailto  : ccsalison@gmail.com
 // date    : 11/25/2018
 // usage   : g++ -o LinkedList LinkedList.cpp; ./LinkedList;
+// notes   : 1) https://stackoverflow.com/questions/53472700/can-i-call-a-public-function-in-a-destructor-to-free-memory
+// 
 // 
 // ####################################################################
 
@@ -33,9 +35,8 @@ public:
 
 	// destructor
 	~LinkedList(){
-		//Node *next = head;
 		while(head != NULL){
-			DeleteEndVal();
+			DeleteHead();
 		}
 	}
 
@@ -74,8 +75,25 @@ public:
 		head = n;
 	}
 
+	int DeleteHead(){
+		if(CheckListEmpty() == true){
+			cout << "Empty list. Nothing to delete." << endl;
+			return -1;
+		}
+		else{
+			int val = head->data;
+			Node *cur = head;
+			head = head->next;
+			free(cur);
+			return val;
+		}
+
+	}
+
 	// delete value from the end of the list
-	int DeleteEndVal(){
+	// Note: cannot be called in destructor because will be O(n*n)
+	//       just to delete the nodes (see note 1)
+	int DeleteTail(){
 		if(CheckListEmpty() == true){
 			cout << "Empty list. Nothing to delete." << endl;
 			return -1;
@@ -129,17 +147,21 @@ public:
 int main(){
 	LinkedList AlisonList;
 	AlisonList.PrintList();
-	AlisonList.DeleteEndVal();
+	AlisonList.DeleteTail();
 	AlisonList.AppendValue(3);
 	AlisonList.PrintList();
-	AlisonList.DeleteEndVal();
+	AlisonList.DeleteTail();
 	AlisonList.PrintList();
 	AlisonList.AppendValue(7);
 	AlisonList.AppendValue(9);
 	AlisonList.PrintList();
-	AlisonList.DeleteEndVal();
+	AlisonList.DeleteTail();
 	AlisonList.PrintList();
 	AlisonList.PrependValue(11);
+	AlisonList.PrependValue(13);
+	AlisonList.PrependValue(15);
+	AlisonList.PrintList();
+	AlisonList.DeleteHead();
 
 
 	AlisonList.PrintList();
