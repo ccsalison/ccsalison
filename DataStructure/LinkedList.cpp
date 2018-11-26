@@ -1,7 +1,7 @@
 // ####################################################################
 //
 // file    : LinkedList.cpp
-// author  :
+// author  : Alison
 // mailto  : ccsalison@gmail.com
 // date    : 11/25/2018
 // usage   : g++ -o LinkedList LinkedList.cpp; ./LinkedList;
