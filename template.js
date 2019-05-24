@@ -5,6 +5,8 @@ var n = num.toString();
 // concatenating arrays
 elements.join('') 
 
+var s_arr = [...s]
+
 parseInt(Value, radix)
 
 var containsDuplicate = function(nums) {
