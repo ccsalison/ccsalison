@@ -37,3 +37,7 @@ console.log(String.fromCharCode(189, 43, 190, 61));
 var icons = '☃★♲';
 console.log(icons.codePointAt(1));
 // expected output: "9733"
+
+var icons = 'ABC';
+console.log(icons.codePointAt(2));
+// expected output: "67"
