@@ -26,3 +26,14 @@ months.splice(4, 1, 'May');
 // replaces 1 element at index 4
 console.log(months);
 // expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+
+
+console.log(String.fromCodePoint(9731, 9733, 9842, 0x2F804));
+// expected output: "☃★♲你"
+
+console.log(String.fromCharCode(189, 43, 190, 61));
+// expected output: "½+¾="
+
+var icons = '☃★♲';
+console.log(icons.codePointAt(1));
+// expected output: "9733"
