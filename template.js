@@ -42,6 +42,25 @@ var icons = 'ABC';
 console.log(icons.codePointAt(2));
 // expected output: "67"
 
+//****************
+//*  FizzBuzz    *
+//****************
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var fizzBuzz = function(n) {
+    return Array.from({length: n}, (v, i) => {
+        i++;
+        if (i % 15 === 0 ) return "FizzBuzz";
+        if (i % 5 === 0 ) return "Buzz";
+        if (i % 3 === 0 ) return "Fizz";
+        return i.toString();
+    });
+};
+
+
 //************
 //*   BST    *
 //************
