@@ -1,0 +1,6 @@
+#!/usr/intel/bin/tcsh -f
+foreach fub (`cat ./myfilelist `)
+  echo ${fub}
+sed -e 's/old_string/new_string/g'   < $fub > ${fub}.new
+mv -f ${fub}.new ${fub}
+end
